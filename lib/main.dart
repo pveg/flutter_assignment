@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyNewApp extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() => _MyNewAppState(); 
+}
+
+class _MyNewAppState extends State<MyNewApp> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +21,11 @@ class MyApp extends StatelessWidget {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-         const Text('Click the button below!', style: TextStyle(fontSize: 32), textAlign: TextAlign.center,),
+          const Text(
+            'Click the button below!',
+            style: TextStyle(fontSize: 32),
+            textAlign: TextAlign.center,
+          ),
           ElevatedButton(onPressed: () => {}, child: const Text('Cool App')),
         ],
       )),
