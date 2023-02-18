@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+         const Text('Click the button below!', style: TextStyle(fontSize: 32), textAlign: TextAlign.center,),
           ElevatedButton(onPressed: () => {}, child: const Text('Cool App')),
         ],
       )),
