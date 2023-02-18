@@ -1,13 +1,31 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyNewApp());
 
-class MyNewApp extends StatefulWidget{
+class MyNewApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _MyNewAppState(); 
+  State<StatefulWidget> createState() => _MyNewAppState();
 }
 
 class _MyNewAppState extends State<MyNewApp> {
+  static const _buttonText = [
+    'If you click',
+    'I change',
+    'Try another time',
+    'Keep clicking',
+    'Maybe'
+  ];
+
+  var _phraseIndex = 0;
+
+  void _changeButtonText() => {
+        setState(() {
+          _phraseIndex++;
+        }),
+        if(_phraseIndex >= _buttonText.length){
+          _phraseIndex = 0
+        }
+      };
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +44,9 @@ class _MyNewAppState extends State<MyNewApp> {
             style: TextStyle(fontSize: 32),
             textAlign: TextAlign.center,
           ),
-          ElevatedButton(onPressed: () => {}, child: const Text('Cool App')),
+          ElevatedButton(
+              onPressed: () => {_changeButtonText()},
+              child: Text(_buttonText[_phraseIndex])),
         ],
       )),
     ));
