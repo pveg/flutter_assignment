@@ -3,12 +3,7 @@ import './text_control.dart';
 
 void main() => runApp(MyNewApp());
 
-class MyNewApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => _MyNewAppState();
-}
-
-class _MyNewAppState extends State<MyNewApp> {
+class MyNewApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
